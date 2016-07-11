@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 import HealthKit
+import MapKit
 
 let DetailSegueName = "RunDetails"
 
@@ -24,6 +25,7 @@ class NewRunViewController: UIViewController {
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
     
     var seconds = 0.0
     var distance = 0.0
@@ -52,6 +54,8 @@ class NewRunViewController: UIViewController {
         stopButton.hidden = true
         
         locationManager.requestAlwaysAuthorization()
+        
+        mapView.hidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -117,6 +121,7 @@ class NewRunViewController: UIViewController {
         locations.removeAll(keepCapacity: false)
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(NewRunViewController.eachSecond(_:)), userInfo: nil, repeats: true)
         startLocationUpdates()
+        mapView.hidden = false
     }
     
     @IBAction func stopPressed(sender: AnyObject) {
@@ -150,10 +155,37 @@ extension NewRunViewController: UIActionSheetDelegate {
 extension NewRunViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            if location.horizontalAccuracy < 20 && self.locations.count > 0 {
-                distance += location.distanceFromLocation(self.locations.last!)
+           let howRecent = location.timestamp.timeIntervalSinceNow
+            
+            if abs(howRecent) < 10 && location.horizontalAccuracy < 20 {
+                if self.locations.count > 0 {
+                    distance += location.distanceFromLocation(self.locations.last!)
+                    var coords = [CLLocationCoordinate2D]()
+                    coords.append((self.locations.last?.coordinate)!)
+                    coords.append(location.coordinate)
+                    
+                    let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
+                    mapView.setRegion(region, animated: true)
+                    
+                    mapView.addOverlay(MKPolyline(coordinates: &coords, count: coords.count))
+                    
+                    
+                }
+                self.locations.append(location)
             }
-            self.locations.append(location)
         }
+    }
+}
+
+extension NewRunViewController: MKMapViewDelegate {
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        if !overlay.isKindOfClass(MKPolyline) {
+            return MKOverlayRenderer()
+        }
+        let polyline = overlay as! MKPolyline
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.strokeColor = UIColor.blueColor()
+        renderer.lineWidth = 3
+        return renderer
     }
 }

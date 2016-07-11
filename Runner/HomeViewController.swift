@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
     var managedObjectContext: NSManagedObjectContext?
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last)
         if segue.destinationViewController.isKindOfClass(NewRunViewController) {
             if let newRunViewController = segue.destinationViewController as? NewRunViewController {
                 newRunViewController.managedObjectContext = managedObjectContext

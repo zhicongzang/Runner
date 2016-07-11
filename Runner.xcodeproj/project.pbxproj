@@ -18,11 +18,13 @@
 		DC6ED79A1D2F0BD900AEFECB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7991D2F0BD900AEFECB /* DetailViewController.swift */; };
 		DC6ED79D1D2F0DF300AEFECB /* success.wav in Resources */ = {isa = PBXBuildFile; fileRef = DC6ED79C1D2F0DF300AEFECB /* success.wav */; };
 		DC6ED79F1D2F0E1900AEFECB /* badges.json in Resources */ = {isa = PBXBuildFile; fileRef = DC6ED79E1D2F0E1900AEFECB /* badges.json */; };
-		DC6ED7AB1D2F21BA00AEFECB /* Runner.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7AA1D2F21BA00AEFECB /* Runner.xcdatamodel */; };
-		DC6ED7B01D2F21E700AEFECB /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7AC1D2F21E700AEFECB /* Run+CoreDataProperties.swift */; };
-		DC6ED7B11D2F21E700AEFECB /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7AD1D2F21E700AEFECB /* Run.swift */; };
-		DC6ED7B21D2F21E700AEFECB /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7AE1D2F21E700AEFECB /* Location+CoreDataProperties.swift */; };
-		DC6ED7B31D2F21E700AEFECB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7AF1D2F21E700AEFECB /* Location.swift */; };
+		DC6ED7FB1D34266900AEFECB /* Runner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7F91D34266900AEFECB /* Runner.xcdatamodeld */; };
+		DC6ED8001D34271C00AEFECB /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7FC1D34271C00AEFECB /* Run+CoreDataProperties.swift */; };
+		DC6ED8011D34271C00AEFECB /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7FD1D34271C00AEFECB /* Run.swift */; };
+		DC6ED8021D34271C00AEFECB /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7FE1D34271C00AEFECB /* Location+CoreDataProperties.swift */; };
+		DC6ED8031D34271C00AEFECB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED7FF1D34271C00AEFECB /* Location.swift */; };
+		DC6ED8051D34363A00AEFECB /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED8041D34363A00AEFECB /* MulticolorPolylineSegment.swift */; };
+		DC6ED8071D34512000AEFECB /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED8061D34512000AEFECB /* Badge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +62,13 @@
 		DC6ED7991D2F0BD900AEFECB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DC6ED79C1D2F0DF300AEFECB /* success.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = success.wav; sourceTree = "<group>"; };
 		DC6ED79E1D2F0E1900AEFECB /* badges.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badges.json; sourceTree = "<group>"; };
-		DC6ED7AA1D2F21BA00AEFECB /* Runner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Runner.xcdatamodel; sourceTree = "<group>"; };
-		DC6ED7AC1D2F21E700AEFECB /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DC6ED7AD1D2F21E700AEFECB /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
-		DC6ED7AE1D2F21E700AEFECB /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DC6ED7AF1D2F21E700AEFECB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DC6ED7FA1D34266900AEFECB /* Runner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Runner.xcdatamodel; sourceTree = "<group>"; };
+		DC6ED7FC1D34271C00AEFECB /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DC6ED7FD1D34271C00AEFECB /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		DC6ED7FE1D34271C00AEFECB /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DC6ED7FF1D34271C00AEFECB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		DC6ED8041D34363A00AEFECB /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
+		DC6ED8061D34512000AEFECB /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +125,11 @@
 				DC6ED7541D2F044700AEFECB /* HomeViewController.swift */,
 				DC6ED7971D2F0BC900AEFECB /* NewRunViewController.swift */,
 				DC6ED7991D2F0BD900AEFECB /* DetailViewController.swift */,
+				DC6ED8041D34363A00AEFECB /* MulticolorPolylineSegment.swift */,
+				DC6ED8061D34512000AEFECB /* Badge.swift */,
+				DC6ED7F91D34266900AEFECB /* Runner.xcdatamodeld */,
 				DC6ED7561D2F044700AEFECB /* Main.storyboard */,
 				DC6ED75C1D2F044700AEFECB /* Assets.xcassets */,
-				DC6ED7AA1D2F21BA00AEFECB /* Runner.xcdatamodel */,
 				DC6ED75E1D2F044700AEFECB /* LaunchScreen.storyboard */,
 			);
 			path = Runner;
@@ -150,10 +156,10 @@
 		DC6ED78A1D2F05B400AEFECB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC6ED7AC1D2F21E700AEFECB /* Run+CoreDataProperties.swift */,
-				DC6ED7AD1D2F21E700AEFECB /* Run.swift */,
-				DC6ED7AE1D2F21E700AEFECB /* Location+CoreDataProperties.swift */,
-				DC6ED7AF1D2F21E700AEFECB /* Location.swift */,
+				DC6ED7FC1D34271C00AEFECB /* Run+CoreDataProperties.swift */,
+				DC6ED7FD1D34271C00AEFECB /* Run.swift */,
+				DC6ED7FE1D34271C00AEFECB /* Location+CoreDataProperties.swift */,
+				DC6ED7FF1D34271C00AEFECB /* Location.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -309,15 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6ED7B21D2F21E700AEFECB /* Location+CoreDataProperties.swift in Sources */,
+				DC6ED8021D34271C00AEFECB /* Location+CoreDataProperties.swift in Sources */,
+				DC6ED8051D34363A00AEFECB /* MulticolorPolylineSegment.swift in Sources */,
+				DC6ED8071D34512000AEFECB /* Badge.swift in Sources */,
 				DC6ED79A1D2F0BD900AEFECB /* DetailViewController.swift in Sources */,
 				DC6ED7551D2F044700AEFECB /* HomeViewController.swift in Sources */,
 				DC6ED7531D2F044700AEFECB /* AppDelegate.swift in Sources */,
-				DC6ED7B31D2F21E700AEFECB /* Location.swift in Sources */,
-				DC6ED7B01D2F21E700AEFECB /* Run+CoreDataProperties.swift in Sources */,
-				DC6ED7AB1D2F21BA00AEFECB /* Runner.xcdatamodel in Sources */,
-				DC6ED7B11D2F21E700AEFECB /* Run.swift in Sources */,
+				DC6ED8031D34271C00AEFECB /* Location.swift in Sources */,
+				DC6ED8001D34271C00AEFECB /* Run+CoreDataProperties.swift in Sources */,
 				DC6ED7981D2F0BC900AEFECB /* NewRunViewController.swift in Sources */,
+				DC6ED8011D34271C00AEFECB /* Run.swift in Sources */,
+				DC6ED7FB1D34266900AEFECB /* Runner.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +571,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC6ED7F91D34266900AEFECB /* Runner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC6ED7FA1D34266900AEFECB /* Runner.xcdatamodel */,
+			);
+			currentVersion = DC6ED7FA1D34266900AEFECB /* Runner.xcdatamodel */;
+			path = Runner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DC6ED7471D2F044700AEFECB /* Project object */;
 }
