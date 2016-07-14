@@ -166,6 +166,19 @@
                                     <outlet property="delegate" destination="T9d-9E-CRj" id="DdM-Pq-CWW"/>
                                 </connections>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JTI-Wk-hCq">
+                                <rect key="frame" x="265" y="406" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="UCE-j2-HK9"/>
+                                    <constraint firstAttribute="width" constant="70" id="iu6-qT-xnn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUD-j3-SsJ">
+                                <rect key="frame" x="279" y="486" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -173,12 +186,15 @@
                             <constraint firstItem="5S9-ld-wTY" firstAttribute="leading" secondItem="ftX-yT-MR7" secondAttribute="leadingMargin" constant="40" id="4wk-JL-XzV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7J1-CZ-aW2" secondAttribute="trailing" id="5Hb-eN-Nzc"/>
                             <constraint firstItem="izO-ZZ-xbU" firstAttribute="leading" secondItem="5S9-ld-wTY" secondAttribute="leading" id="9O6-Cx-feW"/>
+                            <constraint firstItem="vUD-j3-SsJ" firstAttribute="top" secondItem="JTI-Wk-hCq" secondAttribute="bottom" constant="10" id="BXR-sX-JPe"/>
                             <constraint firstItem="5S9-ld-wTY" firstAttribute="top" secondItem="izO-ZZ-xbU" secondAttribute="bottom" constant="20" id="FFi-ag-O4o"/>
                             <constraint firstItem="vJA-Dk-Ld8" firstAttribute="leading" secondItem="ftX-yT-MR7" secondAttribute="leadingMargin" constant="-20" id="H2z-s0-N87"/>
                             <constraint firstItem="qcA-E7-0OK" firstAttribute="leading" secondItem="md1-cj-ykH" secondAttribute="leading" id="LQd-DS-2wc"/>
                             <constraint firstItem="izO-ZZ-xbU" firstAttribute="trailing" secondItem="5S9-ld-wTY" secondAttribute="trailing" id="LZe-bF-olR"/>
                             <constraint firstItem="izO-ZZ-xbU" firstAttribute="top" secondItem="vJA-Dk-Ld8" secondAttribute="bottom" constant="20" id="LzJ-yS-DLB"/>
                             <constraint firstItem="Q6t-GG-GDM" firstAttribute="top" secondItem="5S9-ld-wTY" secondAttribute="bottom" constant="20" id="N8j-eU-jgH"/>
+                            <constraint firstItem="JTI-Wk-hCq" firstAttribute="top" secondItem="vJA-Dk-Ld8" secondAttribute="bottom" constant="20" id="RCl-7W-tjs"/>
+                            <constraint firstItem="vUD-j3-SsJ" firstAttribute="centerX" secondItem="ftX-yT-MR7" secondAttribute="centerX" id="Wpm-RA-ryX"/>
                             <constraint firstItem="ymO-B5-5Cg" firstAttribute="leading" secondItem="qcA-E7-0OK" secondAttribute="leading" id="a27-jE-qMJ"/>
                             <constraint firstItem="ymO-B5-5Cg" firstAttribute="top" secondItem="qcA-E7-0OK" secondAttribute="bottom" constant="7.5" id="bji-Kj-U70"/>
                             <constraint firstItem="ymO-B5-5Cg" firstAttribute="bottom" secondItem="7J1-CZ-aW2" secondAttribute="bottom" id="cNG-Yg-fhd"/>
@@ -190,6 +206,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5S9-ld-wTY" secondAttribute="trailing" constant="40" id="qsi-jR-sOT"/>
                             <constraint firstItem="md1-cj-ykH" firstAttribute="top" secondItem="HyW-oz-0rt" secondAttribute="bottom" constant="20" id="szj-LD-O97"/>
                             <constraint firstItem="md1-cj-ykH" firstAttribute="leading" secondItem="ftX-yT-MR7" secondAttribute="leadingMargin" id="vlh-oF-Y5c"/>
+                            <constraint firstItem="JTI-Wk-hCq" firstAttribute="centerX" secondItem="vJA-Dk-Ld8" secondAttribute="centerX" id="wUi-zb-97F"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -201,6 +218,8 @@
                     <connections>
                         <outlet property="distanceLabel" destination="md1-cj-ykH" id="Ha9-gr-yLa"/>
                         <outlet property="mapView" destination="vJA-Dk-Ld8" id="jKC-eg-oWZ"/>
+                        <outlet property="nextBadgeImageView" destination="JTI-Wk-hCq" id="Hdq-kU-vD5"/>
+                        <outlet property="nextBadgeLabel" destination="vUD-j3-SsJ" id="oNX-qw-0fY"/>
                         <outlet property="paceLabel" destination="ymO-B5-5Cg" id="rLP-MY-jBv"/>
                         <outlet property="promptLabel" destination="7J1-CZ-aW2" id="Sr2-pb-lCW"/>
                         <outlet property="startButton" destination="izO-ZZ-xbU" id="hG1-vO-yM8"/>
@@ -218,13 +237,13 @@
         <!--Badges-->
         <scene sceneID="rm5-FI-Beb">
             <objects>
-                <tableViewController id="VBD-Wl-bpx" sceneMemberID="viewController">
+                <tableViewController id="VBD-Wl-bpx" customClass="BadgesTableViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="uYs-xZ-UEa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BadgeCell" id="qfR-w0-ocN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BadgeCell" id="qfR-w0-ocN" customClass="BadgeCell" customModule="Runner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qfR-w0-ocN" id="LV9-tb-JrS">
@@ -287,6 +306,11 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="badgeImageView" destination="55m-9v-Ll4" id="4jN-TQ-S65"/>
+                                    <outlet property="descLabel" destination="3NN-po-anv" id="2Sd-MH-sd5"/>
+                                    <outlet property="goldImageView" destination="Mel-u4-yxr" id="doD-WU-Mce"/>
+                                    <outlet property="nameLabel" destination="6zo-hx-eBW" id="S1I-hG-XGb"/>
+                                    <outlet property="silverImageView" destination="qFB-lm-cxV" id="SJD-mr-0g2"/>
                                     <segue destination="5u9-1L-kBF" kind="show" id="nfR-vb-CNN">
                                         <nil key="action"/>
                                     </segue>
@@ -304,10 +328,10 @@
             </objects>
             <point key="canvasLocation" x="1311" y="830"/>
         </scene>
-        <!--View Controller-->
+        <!--Badge Details View Controller-->
         <scene sceneID="ScF-LZ-fZg">
             <objects>
-                <viewController id="5u9-1L-kBF" sceneMemberID="viewController">
+                <viewController id="5u9-1L-kBF" customClass="BadgeDetailsViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pTu-zZ-8WV"/>
                         <viewControllerLayoutGuide type="bottom" id="oxO-kY-4q5"/>
@@ -413,6 +437,9 @@
                                 <state key="normal" backgroundImage="info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="infoButtonPressed:" destination="5u9-1L-kBF" eventType="touchUpInside" id="lda-bV-tXz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -426,6 +453,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6qG-7c-JHf"/>
+                    <connections>
+                        <outlet property="badgeImageView" destination="Bt1-ya-MUY" id="2SZ-Bo-L9l"/>
+                        <outlet property="bestLabel" destination="fzD-nO-mzK" id="le7-rY-qeK"/>
+                        <outlet property="distanceLabel" destination="dV2-FS-8Hs" id="Rep-BR-4Ab"/>
+                        <outlet property="earnedLabel" destination="uL8-4k-JGB" id="p4a-zM-2w0"/>
+                        <outlet property="goldImageView" destination="hWh-yd-R8W" id="xmx-xu-7Sh"/>
+                        <outlet property="goldLabel" destination="Tva-zv-kr4" id="fog-fY-cNw"/>
+                        <outlet property="nameLabel" destination="MuQ-bw-x2C" id="aqb-07-hsj"/>
+                        <outlet property="silverImageView" destination="T1b-c5-CRb" id="wIp-ch-uwt"/>
+                        <outlet property="silverLabel" destination="3Db-kd-wSl" id="IQ9-Nm-qhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WG-V3-pl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

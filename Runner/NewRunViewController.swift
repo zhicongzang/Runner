@@ -11,6 +11,7 @@ import CoreData
 import CoreLocation
 import HealthKit
 import MapKit
+import AudioToolbox
 
 let DetailSegueName = "RunDetails"
 
@@ -26,6 +27,9 @@ class NewRunViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var nextBadgeLabel: UILabel!
+    @IBOutlet weak var nextBadgeImageView: UIImageView!
+    var upcomingBadge: Badge?
     
     var seconds = 0.0
     var distance = 0.0
@@ -56,6 +60,9 @@ class NewRunViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         
         mapView.hidden = true
+        
+        nextBadgeLabel.hidden = true
+        nextBadgeImageView.hidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -72,6 +79,12 @@ class NewRunViewController: UIViewController {
         let paceUnit = HKUnit.secondUnit().unitDividedByUnit(HKUnit.meterUnit())
         let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: seconds/distance)
         paceLabel.text = "Pace: " + paceQuantity.description
+        checkNextBadge()
+        if let upcomingBadge = upcomingBadge {
+            let nextBadgeDistanceQuantity = HKQuantity(unit: HKUnit.meterUnit(), doubleValue: upcomingBadge.distance! - distance)
+            nextBadgeLabel.text = "\(nextBadgeDistanceQuantity.description) until \(upcomingBadge.name!)"
+            nextBadgeImageView.image = UIImage(named: upcomingBadge.imageName!)
+        }
     }
     
     func startLocationUpdates() {
@@ -105,6 +118,27 @@ class NewRunViewController: UIViewController {
         
     }
     
+    func playSuccessSound() {
+        let soundURL = NSBundle.mainBundle().URLForResource("success", withExtension: "wav")
+        var soundID : SystemSoundID = 0
+        AudioServicesCreateSystemSoundID(soundURL!, &soundID)
+        AudioServicesPlaySystemSound(soundID)
+        
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate));
+    }
+    
+    func checkNextBadge() {
+        let nextBadge = BadgeController.sharedController.nextBadgeForDistance(distance)
+        
+        if let upcomingBadge = upcomingBadge {
+            if upcomingBadge.name! != nextBadge.name! {
+                playSuccessSound()
+            }
+        }
+        
+        upcomingBadge = nextBadge
+    }
+    
     
     
     @IBAction func startPressed(sender: AnyObject) {
@@ -122,6 +156,8 @@ class NewRunViewController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(NewRunViewController.eachSecond(_:)), userInfo: nil, repeats: true)
         startLocationUpdates()
         mapView.hidden = false
+        nextBadgeLabel.hidden = false
+        nextBadgeImageView.hidden = false
     }
     
     @IBAction func stopPressed(sender: AnyObject) {
