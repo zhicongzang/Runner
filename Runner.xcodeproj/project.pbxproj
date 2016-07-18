@@ -28,6 +28,8 @@
 		DC6ED86A1D383F1500AEFECB /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED8691D383F1500AEFECB /* BadgeCell.swift */; };
 		DC6ED86C1D383F3900AEFECB /* BadgesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED86B1D383F3900AEFECB /* BadgesTableViewController.swift */; };
 		DC6ED86E1D38470B00AEFECB /* BadgeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED86D1D38470B00AEFECB /* BadgeDetailsViewController.swift */; };
+		DC6ED8701D3D89CB00AEFECB /* PastRunsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED86F1D3D89CB00AEFECB /* PastRunsTableViewController.swift */; };
+		DC6ED8721D3D984000AEFECB /* PastRunsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6ED8711D3D984000AEFECB /* PastRunsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		DC6ED8691D383F1500AEFECB /* BadgeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
 		DC6ED86B1D383F3900AEFECB /* BadgesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesTableViewController.swift; sourceTree = "<group>"; };
 		DC6ED86D1D38470B00AEFECB /* BadgeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeDetailsViewController.swift; sourceTree = "<group>"; };
+		DC6ED86F1D3D89CB00AEFECB /* PastRunsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunsTableViewController.swift; sourceTree = "<group>"; };
+		DC6ED8711D3D984000AEFECB /* PastRunsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastRunsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 				DC6ED8691D383F1500AEFECB /* BadgeCell.swift */,
 				DC6ED86B1D383F3900AEFECB /* BadgesTableViewController.swift */,
 				DC6ED86D1D38470B00AEFECB /* BadgeDetailsViewController.swift */,
+				DC6ED86F1D3D89CB00AEFECB /* PastRunsTableViewController.swift */,
+				DC6ED8711D3D984000AEFECB /* PastRunsCell.swift */,
 				DC6ED7F91D34266900AEFECB /* Runner.xcdatamodeld */,
 				DC6ED7561D2F044700AEFECB /* Main.storyboard */,
 				DC6ED75C1D2F044700AEFECB /* Assets.xcassets */,
@@ -327,6 +333,7 @@
 				DC6ED8021D34271C00AEFECB /* Location+CoreDataProperties.swift in Sources */,
 				DC6ED86A1D383F1500AEFECB /* BadgeCell.swift in Sources */,
 				DC6ED86E1D38470B00AEFECB /* BadgeDetailsViewController.swift in Sources */,
+				DC6ED8701D3D89CB00AEFECB /* PastRunsTableViewController.swift in Sources */,
 				DC6ED8051D34363A00AEFECB /* MulticolorPolylineSegment.swift in Sources */,
 				DC6ED8071D34512000AEFECB /* Badge.swift in Sources */,
 				DC6ED79A1D2F0BD900AEFECB /* DetailViewController.swift in Sources */,
@@ -336,6 +343,7 @@
 				DC6ED8001D34271C00AEFECB /* Run+CoreDataProperties.swift in Sources */,
 				DC6ED7981D2F0BC900AEFECB /* NewRunViewController.swift in Sources */,
 				DC6ED86C1D383F3900AEFECB /* BadgesTableViewController.swift in Sources */,
+				DC6ED8721D3D984000AEFECB /* PastRunsCell.swift in Sources */,
 				DC6ED8011D34271C00AEFECB /* Run.swift in Sources */,
 				DC6ED7FB1D34266900AEFECB /* Runner.xcdatamodeld in Sources */,
 			);

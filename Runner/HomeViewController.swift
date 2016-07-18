@@ -30,6 +30,19 @@ class HomeViewController: UIViewController {
                 
             } catch {}
             
+        } else if segue.destinationViewController.isKindOfClass(PastRunsTableViewController) {
+            let fetchRequest = NSFetchRequest(entityName: "Run")
+            let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            
+            do {
+                let runs = try managedObjectContext!.executeFetchRequest(fetchRequest) as! [Run]
+                
+                let pastRunsTableViewController = segue.destinationViewController as! PastRunsTableViewController
+                pastRunsTableViewController.pastRuns = runs
+                
+            } catch {}
+            
         }
     }
 }
